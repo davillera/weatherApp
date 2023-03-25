@@ -1,1 +1,5 @@
-<p>weather works!</p>
+<h1>Ciudad: {{weatherData?.name}}</h1>
+<p>{{weatherData?.weather[0].description}}</p>
+<p>Temperatura: {{weatherData?.main.temp}} °C</p>
+<p>Sensación térmica: {{weatherData?.main.feels_like}} °C</p>
+<p>Humedad: {{weatherData?.main.humidity}} %</p>
