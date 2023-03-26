@@ -3,7 +3,7 @@ import { Component, Output } from '@angular/core';
 
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { WeatherService } from 'src/app/components/services/weather.service';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-search',

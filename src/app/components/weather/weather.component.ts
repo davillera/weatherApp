@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import { geoLocationService } from 'src/app/components/services/geolocation.service';
-import { WeatherService } from 'src/app/components/services/weather.service';
+import { geoLocationService } from 'src/app/services/geolocation.service';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-weather',
