@@ -1,4 +1,4 @@
 <div>
-  <input type="text" placeholder="For Example: London" name="" id="inputCity">
+  <input type="text" #cityName placeholder="For Example: London" [(ngModel)]="nameCity" id="inputCity">
   <button (click)="getWeatherByCityName()"><fa-icon [icon]="faSearch"></fa-icon></button>
 </div>

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 
+
+
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { WeatherService } from 'src/app/services/weather.service';
+import { WeatherService } from 'src/app/components/services/weather.service';
 
 @Component({
   selector: 'app-search',
@@ -10,19 +12,22 @@ import { WeatherService } from 'src/app/services/weather.service';
 })
 export class SearchComponent {
 
-  location: string = '';
-
   faSearch = faSearch;
-  data: any;
+
+  nameCity: string = ''
 
   constructor(
     private weatherService: WeatherService
   ) { }
-  getWeatherByCityName() {
-    this.weatherService.getWeatherByCityName(this.location)
-      .subscribe((data: any) => {
-        console.log(data);
 
-      })
+
+  getWeatherByCityName() {
+    console.log(this.nameCity);
+    this.weatherService.getWeatherByCityName(this.nameCity)
+    .subscribe(data =>{
+      console.log(data);
+    })
   }
+
+  
 }

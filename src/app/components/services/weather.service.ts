@@ -19,7 +19,7 @@ export class WeatherService {
   }
 
   getWeatherByCityName(cityName: string){
-    const url =`${this.baseURL}?q=${cityName}$appid=${this.apiKey}${this.metric}`
+    const url =`${this.baseURL}?q=${cityName}&appid=${this.apiKey}&${this.metric}`
     return this.http.get<any>(url)
   }
 }
