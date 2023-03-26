@@ -13,6 +13,8 @@ export class WeatherComponent {
   locationData: any;
   weatherData: any;
 
+  @Input() nameCity: string = ''
+
   constructor(
     private geoLocationService: geoLocationService,
     private weatherService: WeatherService
@@ -34,4 +36,15 @@ export class WeatherComponent {
       this.weatherData = data;
     });
   }
+
+  getWeatherByCityName() {
+    console.log(this.nameCity);
+    this.weatherService.getWeatherByCityName(this.nameCity)
+    .subscribe(data =>{
+      console.log(`${this.nameCity} desde weather component`);
+      console.log(data);
+    })
+  }
+
+
 }

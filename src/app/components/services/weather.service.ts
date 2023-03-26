@@ -11,12 +11,17 @@ export class WeatherService {
   private metric = 'units=metric'
   private imperial = 'units=imperial'
 
-  constructor(private http: HttpClient) {}
+  cityName: string = '';
+
+  constructor(
+    private http: HttpClient
+    ) { }
 
   getWeatherByCoordinates(lat: number, lon: number): Observable<any> {
     const url = `${this.baseURL}?lat=${lat}&lon=${lon}&appid=${this.apiKey}&${this.metric}`;
     return this.http.get<any>(url);
   }
+
 
   getWeatherByCityName(cityName: string){
     const url =`${this.baseURL}?q=${cityName}&appid=${this.apiKey}&${this.metric}`
