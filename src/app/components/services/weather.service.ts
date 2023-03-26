@@ -1,5 +1,5 @@
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class WeatherService {
   private metric = 'units=metric'
   private imperial = 'units=imperial'
 
-  cityName: string = '';
+  @Output() sendCityName: EventEmitter<string> = new EventEmitter();
 
   constructor(
     private http: HttpClient

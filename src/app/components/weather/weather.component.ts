@@ -28,7 +28,14 @@ export class WeatherComponent {
       this.locationData = data;
       this.getWeatherOnInit();
     });
+
+    this.weatherService.sendCityName
+    .subscribe(data =>{
+      this.getWeatherByCityName(data)
+    })
   }
+
+
 
   getWeatherOnInit() {
     this.weatherService.getWeatherByCoordinates(this.locationData.latitude, this.locationData.longitude)
@@ -37,14 +44,13 @@ export class WeatherComponent {
     });
   }
 
-  getWeatherByCityName() {
-    console.log(this.nameCity);
-    this.weatherService.getWeatherByCityName(this.nameCity)
+  getWeatherByCityName(data: string) {
+    console.log(data);
+    this.weatherService.getWeatherByCityName(data)
     .subscribe(data =>{
-      console.log(`${this.nameCity} desde weather component`);
-      console.log(data);
+      console.log(`${data} desde weather component`);
+      this.weatherData = data
     })
   }
-
 
 }

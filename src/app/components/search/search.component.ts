@@ -24,13 +24,11 @@ export class SearchComponent {
   //necesito que la petición al servicio, lo haga weathercomponent para así hacer más fácil el render
   //es decir, getWeatherByCityName, debo pasarlo a weathercompoenent
 
-  
+
   getWeatherByCityName() {
     console.log(this.nameCity);
-    this.weatherService.getWeatherByCityName(this.nameCity)
-    .subscribe(data =>{
-      console.log(data);
-    })
+    this.weatherService.sendCityName
+    .emit(this.nameCity)
   }
 
 
