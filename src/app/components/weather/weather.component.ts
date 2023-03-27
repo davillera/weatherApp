@@ -4,6 +4,11 @@ import { geoLocationService } from 'src/app/services/geolocation.service';
 import { TimezoneService } from 'src/app/services/timezone.service';
 import { WeatherService } from 'src/app/services/weather.service';
 
+//icons
+import { faWind } from '@fortawesome/free-solid-svg-icons';
+import { faDroplet } from '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
@@ -14,6 +19,13 @@ export class WeatherComponent {
   locationData: any;
   weatherData: any;
   timeZone: any;
+
+  //icons
+  faWind = faWind;
+  faDroplet = faDroplet;
+  faEye = faEye;
+
+
 
 
   @Input() nameCity: string = ''

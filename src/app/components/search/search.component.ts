@@ -10,7 +10,6 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class SearchComponent {
 
   faSearch = faSearch;
-
   @Output() nameCity: string = ''
 
   constructor(
@@ -20,7 +19,7 @@ export class SearchComponent {
   getWeatherByCityName() {
     console.log(this.nameCity);
     this.weatherService.sendCityName
-    .emit(this.nameCity)
+      .emit(this.nameCity)
   }
 
 }
