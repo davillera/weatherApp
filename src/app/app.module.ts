@@ -8,13 +8,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { ConvertPipe } from './pipes/convert.pipe';
+import { ConvertToKmPipe } from './pipes/convert-to-km.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     SearchComponent,
-    WeatherComponent
+    WeatherComponent,
+    ConvertPipe,
+    ConvertToKmPipe
   ],
   imports: [
     BrowserModule,

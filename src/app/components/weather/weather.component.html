@@ -1,5 +1,7 @@
-<h1>Ciudad: {{weatherData?.name}}</h1>
-<p>{{weatherData?.weather[0].description}}</p>
-<p>Temperatura: {{weatherData?.main.temp}} °C</p>
-<p>Sensación térmica: {{weatherData?.main.feels_like}} °C</p>
-<p>Humedad: {{weatherData?.main.humidity}} %</p>
+<h1 *ngIf="weatherData">City: {{weatherData?.name}}</h1>
+<p *ngIf="weatherData">{{weatherData?.weather[0].description}}</p>
+<p *ngIf="weatherData">Temperature: {{weatherData?.main.temp | number:"1.0-0"}}°C </p>
+<p *ngIf="weatherData">Thermal Sensation: {{weatherData?.main.feels_like | number:"1.0-0"}}°C</p>
+<p *ngIf="weatherData">Humidity: {{weatherData?.main.humidity}}%</p>
+<p *ngIf="weatherData">Wind Speed: {{weatherData?.wind.speed | convertToKmh | number:"1.0-2" }}Km/H</p>
+<p *ngIf="weatherData">Visibility: {{weatherData?.visibility | convertToKm}}Km  </p>
