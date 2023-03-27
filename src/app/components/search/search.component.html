@@ -1,4 +1,4 @@
-<div>
+<section class="my-4 flex justify-center space-x-2">
   <input
     class="rounded-full border-inherit p-2"
     type="text"
@@ -7,7 +7,8 @@
     [(ngModel)]="nameCity"
     id="inputCity"
   />
+
   <button (click)="getWeatherByCityName()">
     <fa-icon class="fa-xl" style="color: #aec3b0" [icon]="faSearch"></fa-icon>
   </button>
-</div>
+</section>

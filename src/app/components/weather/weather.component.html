@@ -1,4 +1,4 @@
-<section>
+<div>
   <h1 class="text-4xl" *ngIf="weatherData">
     {{ weatherData?.name }}, {{ weatherData?.sys.country }}
   </h1>
@@ -9,37 +9,32 @@
   >
     {{ weatherData?.weather[0].main }}
   </p>
+</div>
 
-  <p
+<!-- temperatura -->
+<p *ngIf="weatherData" class="temp text-9xl">
+  {{ weatherData?.main.temp | number : "1.0-0" }}°C
+</p>
+
+<div
   *ngIf="weatherData"
-  class="temp text-8xl">
-    {{ weatherData?.main.temp | number : "1.0-0" }}°C
-  </p>
-
-  <div
-    *ngIf="weatherData"
-    class="weather flex flex-row justify-around bg-black mx-4 p-4 rounded-lg"
-  >
-    <div>
-      <fa-icon
-        class="fa-lg"
-        [icon]="faDroplet"
-        style="color: #aec3b0"
-      ></fa-icon>
-      <p>{{ weatherData?.main.humidity }}%</p>
-      <p>Humidity</p>
-    </div>
-
-    <div>
-      <fa-icon class="fa-lg" [icon]="faWind" style="color: #aec3b0"></fa-icon>
-      <p>{{ weatherData?.wind.speed | convertToKmh | number : "1.0-0" }}Km/h</p>
-      <p>Wind</p>
-    </div>
-
-    <div>
-      <fa-icon class="fa-lg" [icon]="faEye" style="color: #aec3b0"></fa-icon>
-      <p>{{ weatherData?.visibility | convertToKm }}Km</p>
-      <p>Visibility</p>
-    </div>
+  class="weather flex flex-row justify-around bg-black mx-4 p-4 rounded-lg"
+>
+  <div>
+    <fa-icon class="fa-lg" [icon]="faDroplet" style="color: #aec3b0"></fa-icon>
+    <p>{{ weatherData?.main.humidity }}%</p>
+    <p>Humidity</p>
   </div>
-</section>
+
+  <div>
+    <fa-icon class="fa-lg" [icon]="faWind" style="color: #aec3b0"></fa-icon>
+    <p>{{ weatherData?.wind.speed | convertToKmh | number : "1.0-0" }}Km/h</p>
+    <p>Wind</p>
+  </div>
+
+  <div>
+    <fa-icon class="fa-lg" [icon]="faEye" style="color: #aec3b0"></fa-icon>
+    <p>{{ weatherData?.visibility | convertToKm }}Km</p>
+    <p>Visibility</p>
+  </div>
+</div>
